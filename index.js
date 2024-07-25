@@ -14,6 +14,23 @@ exports.handler = async (event) => {
 
 const Course_history = () => {
     console.log("Course_history")
+    https
+        .get("https://www.google.com", (res) => {
+            let data = ""
+
+            // 데이터를 조각조각 수신합니다.
+            res.on("data", (chunk) => {
+                data += chunk
+            })
+
+            // 전체 데이터 수신이 완료되면 이 콜백이 호출됩니다.
+            res.on("end", () => {
+                console.log(data)
+            })
+        })
+        .on("error", (err) => {
+            console.error("Error: " + err.message)
+        })
     const response = {
         statusCode: 200,
         body: "Function Course_history executed successfully",
