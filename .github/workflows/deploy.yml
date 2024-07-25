@@ -21,4 +21,7 @@ jobs:
 
             - name: Create Zip File
               run: |
-                  ls
+                  zip -r ${{ secrets.ZIP_FILE_NAME }} .
+
+            - name: Upload to S3 Bucket
+              run: aws s3 cp ${{ secrets.ZIP_FILE_NAME }} s3://${{ secrets.S3_BUCKET_NAME }}
