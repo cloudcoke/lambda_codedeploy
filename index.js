@@ -13,6 +13,7 @@ exports.handler = async (event) => {
 }
 
 const Course_history = () => {
+    console.log("Course_history")
     const response = {
         statusCode: 200,
         body: "Function Course_history executed successfully",
@@ -22,6 +23,7 @@ const Course_history = () => {
 }
 
 const Class_history = () => {
+    console.log("Class_history")
     const response = {
         statusCode: 200,
         body: "Function Class_history executed successfully",
