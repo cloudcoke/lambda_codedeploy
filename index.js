@@ -1,3 +1,5 @@
+const https = require("https")
+
 exports.handler = async (event) => {
     switch (event.functionName) {
         case "Course_history":
